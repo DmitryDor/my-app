@@ -1,0 +1,12 @@
+
+
+
+
+
+.header {
+    grid-area: h;
+    background-color: chartreuse;
+}
+.header img {
+    width: 40px;
+}

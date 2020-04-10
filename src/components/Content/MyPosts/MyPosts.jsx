@@ -1,22 +1,35 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
+import Post from "./Post/Post";
 
-const MyPosts = () => {
-    return (
+class MyPosts extends React.Component {
 
-        <div>
-            My posts
+
+    state = {
+        posts: [
+            {id: 1, message: '1111', like: 1},
+            {id: 2, message: '2222', like: 2}
+        ]
+    };
+
+    render() {
+
+        return (
             <div>
-                New post
-            </div>
-            <div className={classes.posts}>
-                <div className={classes.item}>new post 1</div>
-                <div className={classes.item}>new post 2</div>
-                <div className={classes.item}>new post 3</div>
-            </div>
-        </div>
+                My posts
+                <div>
+                    <textarea></textarea>
+                    <button>Add post</button>
 
-    )
+                </div>
+                <div className={classes.posts}>
+                    <Post message={this.state.posts[0].message} like={this.state.posts[0].like}/>
+                    <Post message={this.state.posts[1].message} like={this.state.posts[1].like}/>
+                </div>
+            </div>
+
+        )
+    }
 }
 
 export default MyPosts;

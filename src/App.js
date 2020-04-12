@@ -4,20 +4,33 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Navbar/Nav";
 import Content from "./components/Content/content";
 import Dialogs from "./components/Dialogs/Dialogs";
+
+
+
 import classes from "./components/Content/content.module.css";
+import {BrowserRouter, Route} from "react-router-dom";
+import News from "./components/News/News";
+import Musec from "./components/Musec/Musec";
+import Settings from "./components/Settings/Settings";
 
 
 const App = () => {
     return (
-        <div className='app-wrapper'>
-            <Header/>
-            <Nav/>
-            <div class='app-wrapper-content'>
-                <Dialogs/>
-                {/*<Content />*/}
-            </div>
+        <BrowserRouter>
+            <div className='app-wrapper'>
+                <Header/>
+                <Nav/>
+                <div class='app-wrapper-content'>
+                    <Route path ='/dialogs' component={Dialogs}/>
+                    <Route path ='/profile' component={Content}/>
+                    <Route path ='/musec' component={Musec}/>
+                    <Route path ='/news' component={News}/>
+                    <Route path ='/settings' component={Settings}/>
 
-        </div>
+                </div>
+
+            </div>
+        </BrowserRouter>
     )
 }
 export default App;

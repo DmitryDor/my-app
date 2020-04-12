@@ -14,8 +14,9 @@ const App = () => {
             <Nav/>
             <div class='app-wrapper-content'>
                 <Dialogs/>
+                {/*<Content />*/}
             </div>
-            {/*<Content />*/}
+
         </div>
     )
 }

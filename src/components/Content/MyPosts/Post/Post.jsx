@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Post.module.css';
-import Like from "./Like";
+
 
 
 const Post = (props) => {
@@ -13,9 +13,8 @@ const Post = (props) => {
             {props.message}
             <div >
                 <span>
-                   <Like quality={props.like} />
-                  {/* <Like quality='9' />*/}
-                </span>
+                   like
+                </span>{props.likesCount }
             </div>
 
         </div>

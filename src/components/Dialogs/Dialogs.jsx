@@ -1,35 +1,46 @@
 import React from "react";
 import classes from './Dialogs.module.css';
+import Nav from "../Nav/Nav";
+import {NavLink} from "react-router-dom";
+/*компанента для диалогов    */
+const DialogItem = (props) => {
+    let path="/dialogs/" + props.id;
+
+    return (
+        <div className={classes.dialog + ' ' + classes.active}>
+            <NavLink to={path}>{props.name}</NavLink>
+
+        </div>
+    )
+}
+/* Компанента для сообщений*/
+const Message = (props) => {
+    return(
+        <div className={classes.dialog}>{props.message}</div>
+    )
+}
 
 const Dialogs = (props) => {
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                <div className={classes.dialog + ' ' + classes.active}>
-                    Dimych
-                </div>
-                <div className={classes.dialog}>
-                    Andrey
-                </div>
-                <div className={classes.dialog}>
-                    Sveta
-                </div>
-                <div className={classes.dialog}>
-                    Sasha
-                </div>
-                <div className={classes.dialog}>
-                    Victor
-                </div>
-                <div className={classes.dialog}>
-                    Valera
-                </div>
+                <DialogItem name="Dimych" id="1" />
+                <DialogItem name="Andrey" id="2" />
+                <DialogItem name="Sveta" id="3" />
+                <DialogItem name="Sasha" id="4" />
+                <DialogItem name="Victor" id="5" />
+                <DialogItem name="Valera" id="6" />
+
             </div>
 
             <div className={classes.messages}>
-                <div className={classes.messages}>Hi</div>
-                <div className={classes.messages}>How is your it-camasutrea?</div>
-                <div className={classes.messages}>Yo</div>
-                            </div>
+                <Message message="Hi" />
+                <Message message="How is your it-camasutrea?" />
+                <Message message="Yo" />
+                <Message message="Yo" />
+                <Message message="Yo" />
+
+            </div>
         </div>
     )
 }

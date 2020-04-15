@@ -21,11 +21,18 @@ const App = () => {
                 <Header/>
                 <Nav/>
                 <div class='app-wrapper-content'>
-                    <Route path ='/dialogs' component={Dialogs}/>
-                    <Route path ='/profile' component={Content}/>
-                    <Route path ='/musec' component={Musec}/>
-                    <Route path ='/news' component={News}/>
-                    <Route path ='/settings' component={Settings}/>
+                    {/*<Route path ='/dialogs' component={Dialogs}/>*/}
+                    {/*<Route path ='/profile' component={Content}/>*/}
+                    {/*<Route path ='/musec' component={Musec}/>*/}
+                    {/*<Route path ='/news' component={News}/>*/}
+                    {/*<Route path ='/settings' component={Settings}/>*/}
+   {/*чтоб использовать props c более высоких файлов используем для route вариант ниже*/}
+                    <Route path ='/dialogs' render={() => <Dialogs/>}/>
+                    <Route path ='/profile'render={ () => <Content/> }/>
+                    <Route path ='/musec' render={ () => <Musec/> }/>
+                    <Route path ='/news' render={ () => <News/> }/>
+                    <Route path ='/settings' render={ () => <Settings/>} />
+
                 </div>
             </div>
         </BrowserRouter>

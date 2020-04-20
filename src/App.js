@@ -14,7 +14,8 @@ import Musec from "./components/Musec/Musec";
 import Settings from "./components/Settings/Settings";
 
 
-const App = () => {
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -28,7 +29,7 @@ const App = () => {
                     {/*<Route path ='/settings' component={Settings}/>*/}
    {/*чтоб использовать props c более высоких файлов используем для route вариант ниже*/}
                     <Route path ='/dialogs' render={() => <Dialogs/>}/>
-                    <Route path ='/profile'render={ () => <Content/> }/>
+                    <Route path ='/profile'render={ () => <Content posts={props.posts}/> }/>
                     <Route path ='/musec' render={ () => <Musec/> }/>
                     <Route path ='/news' render={ () => <News/> }/>
                     <Route path ='/settings' render={ () => <Settings/>} />

@@ -3,12 +3,14 @@ import classes from './content.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Content = () => {
+const Content = (props) => {
+
+
 
     return (
         <div >
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts posts={props.posts}/>
         </div>
     )
 }

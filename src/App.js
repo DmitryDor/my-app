@@ -28,7 +28,7 @@ const App = (props) => {
                     {/*<Route path ='/news' component={News}/>*/}
                     {/*<Route path ='/settings' component={Settings}/>*/}
    {/*чтоб использовать props c более высоких файлов используем для route вариант ниже*/}
-                    <Route path ='/dialogs' render={() => <Dialogs/>}/>
+                    <Route path ='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
                     <Route path ='/profile'render={ () => <Content posts={props.posts}/> }/>
                     <Route path ='/musec' render={ () => <Musec/> }/>
                     <Route path ='/news' render={ () => <News/> }/>

@@ -6,7 +6,6 @@ import Content from "./components/Content/content";
 import Dialogs from "./components/Dialogs/Dialogs";
 
 
-
 import classes from "./components/Content/content.module.css";
 import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
@@ -27,12 +26,12 @@ const App = (props) => {
                     {/*<Route path ='/musec' component={Musec}/>*/}
                     {/*<Route path ='/news' component={News}/>*/}
                     {/*<Route path ='/settings' component={Settings}/>*/}
-   {/*чтоб использовать props c более высоких файлов используем для route вариант ниже*/}
-                    <Route path ='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
-                    <Route path ='/profile'render={ () => <Content posts={props.posts}/> }/>
-                    <Route path ='/musec' render={ () => <Musec/> }/>
-                    <Route path ='/news' render={ () => <News/> }/>
-                    <Route path ='/settings' render={ () => <Settings/>} />
+                    {/*чтоб использовать props c более высоких файлов используем для route вариант ниже*/}
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>} />
+                    <Route path='/profile' render={() => <Content state={props.state.profilePage}/>} />
+                    <Route path='/musec' render={() => <Musec/>}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/settings' render={() => <Settings/>}/>
 
                 </div>
             </div>
